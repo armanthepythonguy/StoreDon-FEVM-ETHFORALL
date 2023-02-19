@@ -8,7 +8,6 @@ import { Misc } from "./Misc.sol";
 
 
 contract OrderBook{
-
     uint64 constant DEFAULT_FLAG = 0x00000000;
     uint64 constant METHOD_SEND = 0;
 
@@ -83,9 +82,14 @@ contract OrderBook{
         oraclesIP.push(_oracleIP);
     }
 
+    function addDemoAsks(address _SPAddress, uint _askAmount, uint256 _askSize) external onlyOwner{
+        asks[askId] = Ask(askId, _SPAddress, _askAmount, _askSize);
+        askId++;
+        emit NewAskEvent(askId-1, _SPAddress, _askAmount, _askSize);
+    }
 
-    function addBid(address _oracleAddress, uint256 _bidAmount, uint256 _bidSize, string memory _dataCID) external payable {
-        require(msg.value >= _bidAmount);
+    function addBid(address _oracleAddress, uint256 _bidAmount, uint256 _bidSize, string memory _dataCID) external payable{
+        require(msg.value >= _bidAmount, "Need more funds");
         bids[bidId] = Bid(bidId, msg.sender, _bidAmount, _bidSize, _oracleAddress, _dataCID);
         bidId++;
         emit NewBidEvent(bidId-1, msg.sender, _bidAmount, _bidSize);
