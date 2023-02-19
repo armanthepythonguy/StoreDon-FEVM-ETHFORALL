@@ -1,0 +1,267 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "_target",
+				"type": "bytes"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_askAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_askSize",
+				"type": "uint256"
+			}
+		],
+		"name": "addAsk",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_oracleAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bidAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bidSize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_dataCID",
+				"type": "string"
+			}
+		],
+		"name": "addBid",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "_orderId",
+				"type": "bytes"
+			},
+			{
+				"internalType": "uint64",
+				"name": "_actorId",
+				"type": "uint64"
+			}
+		],
+		"name": "askBounty",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "_oracles",
+				"type": "address[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "_oraclesIP",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "askId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "asker",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "askAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "askSize",
+				"type": "uint256"
+			}
+		],
+		"name": "NewAskEvent",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bidId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "bidder",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bidAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bidSize",
+				"type": "uint256"
+			}
+		],
+		"name": "NewBidEvent",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes",
+				"name": "orderId",
+				"type": "bytes"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bidId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "bidder",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "askId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "asker",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "oracleAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "dataCID",
+				"type": "string"
+			}
+		],
+		"name": "orderCreatedEvent",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "_orderId",
+				"type": "bytes"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bidId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_askId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amountFixed",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_sizeFixed",
+				"type": "uint256"
+			}
+		],
+		"name": "proveOrder",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_oracle",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_oracleIP",
+				"type": "string"
+			}
+		],
+		"name": "registerOracle",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getOracles",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
