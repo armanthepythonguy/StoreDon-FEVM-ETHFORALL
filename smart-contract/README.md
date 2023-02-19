@@ -1,13 +1,2 @@
-# Sample Hardhat Project
+# Smart contract address :- 0xF3081c324E15Bc109D302f4D2A29533131160DAa
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
